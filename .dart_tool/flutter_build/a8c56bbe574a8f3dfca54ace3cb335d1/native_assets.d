@@ -1,0 +1,1 @@
+ /Users/projects/task-shine-web/.dart_tool/flutter_build/a8c56bbe574a8f3dfca54ace3cb335d1/native_assets.yaml: 

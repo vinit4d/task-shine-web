@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "435554233054",
+    "project_id": "demoapp-ef79f",
+    "storage_bucket": "demoapp-ef79f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435554233054:android:a2c4eb98964eec10e0b04f",
+        "android_client_info": {
+          "package_name": "com.example.demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8DKaNewMBwk8vghDLJbxmml3pDUzh9F4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
