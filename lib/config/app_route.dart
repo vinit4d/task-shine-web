@@ -1,3 +1,4 @@
+import 'package:demo/presentation/views/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -33,7 +34,14 @@ class AppRoute {
         Map<String, dynamic> data = settings.arguments as Map<String, dynamic>;
         return PageNavigation.push(
           isLTR: true,
-          child: Home(name: data['name'], email: data['email']),
+          child:
+          BlocProvider(
+            create: (context) => HomeCubit(),
+            child: Home(name: data['name'], email: data['email']),
+          ),
+
+
+
         );
 
       default:

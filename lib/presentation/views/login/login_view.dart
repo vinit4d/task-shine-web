@@ -195,6 +195,50 @@ class LoginScreen extends StatelessWidget {
                             ]),
                       ),
                       30.heightBox,
+                      SizedBox(
+                        height: 45,
+                        child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Expanded(
+                                  child: InkWell(
+                                    onTap: () {
+                                      cubit.appleLogin();
+                                    },
+                                    child: SizedBox(
+                                      height: 45,
+                                      child: Container(
+                                        padding: const EdgeInsets.all(10),
+                                        decoration: BoxDecoration(
+                                          border: Border.all(width: 0.2),
+                                        ),
+                                        child: FittedBox(
+                                          child: Row(
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                            children: [
+                                              SvgPicture.asset(
+                                                'appleLogo'.toSvg,
+                                                width: 20,
+                                                // Adjust the size of the logo as per your requirement
+                                                height: 20,
+                                              ),
+                                              const SizedBox(
+                                                width: 10,
+                                              ),
+                                              Text(
+                                                ThemeConfig.strings.apple,
+                                                style: ThemeConfig.styles.style16,
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  )),
+                            ]),
+                      ),
+                      30.heightBox,
                     ],
                   ),
                 ),

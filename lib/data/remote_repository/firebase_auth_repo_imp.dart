@@ -71,7 +71,9 @@ class FirebaseAuthRepoImp extends FirebaseAuthRepo {
   }
 
   @override
-  Future<BaseResponseModel<dynamic>> socialMediaLogin() async {
+  Future<BaseResponseModel<dynamic>> socialMediaLogin()
+
+  async {
     try {
       final res = await service.callSocialLogin();
 
@@ -90,6 +92,32 @@ class FirebaseAuthRepoImp extends FirebaseAuthRepo {
           state: AppStateEnum.error,
           message: ThemeConfig.strings.somethingWentWrong,
           data: '');
+    }
+  }
+
+  @override
+  Future<BaseResponseModel> signInWithApple()   async {
+    try {
+      final res = await service.signInWithApple();
+
+
+      print("reciver data : ${res}");
+
+      return BaseResponseModel<dynamic>(
+          state: AppStateEnum.success,
+          data: res,
+          message: ThemeConfig.strings.successLoggedIn);
+    } on ValidationException catch (e) {
+      return BaseResponseModel<dynamic>(
+          state: AppStateEnum.validationError, message: e.message, data: "");
+    } on SocketException catch (e) {
+      return BaseResponseModel<dynamic>(
+          state: AppStateEnum.socket, message: e.message, data: "");
+    } catch (e) {
+      return BaseResponseModel<dynamic>(
+          state: AppStateEnum.error,
+          message: ThemeConfig.strings.somethingWentWrong,
+          data: 'No data');
     }
   }
 }

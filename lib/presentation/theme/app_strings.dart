@@ -26,6 +26,7 @@ class AppStrings {
   String get orWith => "  or with  ";
 
   String get google => "Google";
+  String get apple => "Apple";
 
   String get facebook => "Facebook";
 

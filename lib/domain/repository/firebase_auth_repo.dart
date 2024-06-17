@@ -6,6 +6,8 @@ abstract class FirebaseAuthRepo {
 
   Future<BaseResponseModel<dynamic>> socialMediaLogin();
 
+  Future<BaseResponseModel<dynamic>> signInWithApple();
+
   Future<BaseResponseModel<dynamic>> setSignup(
       {required String name, required String email, required password});
 }

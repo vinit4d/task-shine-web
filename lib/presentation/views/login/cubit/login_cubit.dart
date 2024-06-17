@@ -11,6 +11,7 @@ class LoginCubit extends Cubit<LoginState> {
   LoginCubit() : super(LoginInitialState());
 
   FirebaseAuthRepoImp service = FirebaseAuthRepoImp();
+
   bool observeText = true;
 
   final cEmail = TextEditingController();
@@ -59,7 +60,7 @@ class LoginCubit extends Cubit<LoginState> {
   // <---------------------------- login with google auth -------------------------->
 
   googleLogin() async {
-    FirebaseAuthRepoImp service = FirebaseAuthRepoImp();
+
 
     try {
       final res = await service.socialMediaLogin();
@@ -76,6 +77,28 @@ class LoginCubit extends Cubit<LoginState> {
       }
     } catch (e) {
       print(e);
+    }
+  }
+
+
+  // <---------------------------- login with apple auth -------------------------->
+
+  appleLogin() async {
+
+    try {
+      final res = await service.signInWithApple();
+
+      if (res.data != null) {
+        emit(LoginSuccessGoogleState(res.message!, {
+          'name': res.data.user!.displayName.toString(),
+          'email': res.data.user!.email.toString()
+        }));
+
+      } else {
+        emit(LoginErrorState(res.message!));
+      }
+    } catch (e) {
+      print("the error is "+e.toString());
     }
   }
 
